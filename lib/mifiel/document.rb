@@ -9,6 +9,7 @@ module Mifiel
 
     # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     def self.create(args)
+      puts 'vas a crear un documento'
       signatories = args[:signatories]
       file = args[:file]
       hash = args[:hash]
