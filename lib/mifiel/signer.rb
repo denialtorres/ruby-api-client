@@ -20,7 +20,7 @@ module Mifiel
     
     def self.makesigner(path, method, payload=nil)
       puts 'estas en makesigner'
-      params = { email: email }
+      params = { email: 'correo@prueba.com' }
       rest_request = RestClient::Request.new(
         url: "#{Mifiel.config.base_url}/#{path}",
         method: method,
