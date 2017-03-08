@@ -6,6 +6,7 @@ module Mifiel
   autoload :Document, 'mifiel/document'
   autoload :Certificate, 'mifiel/certificate'
   autoload :Config, 'mifiel/config'
+  autoload :Signer, 'mifiel/signer'
 
   BASE_URL = 'https://www.mifiel.com/api/v1'.freeze
 
