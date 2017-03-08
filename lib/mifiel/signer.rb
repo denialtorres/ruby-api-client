@@ -15,7 +15,7 @@ module Mifiel
       # x = Net::HTTP.post_form(URI.parse('https://app-stageex.mifiel.com/api/v1/documents/7e4f0ec4-9668-4cc2-a585-351cd0bf6313/signers'), params)
 
       # puts x.body
-      Mifiel::Signer.makesigner("/documents/#{id}/signers", :post )
+      Mifiel::Signer.makesigner("/documents/291a9989-992f-44b1-9a37-8eff350d644c/signers", :post )
     end
     
     def self.makesigner(path, method, payload=nil)
