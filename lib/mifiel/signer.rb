@@ -12,12 +12,22 @@ module Mifiel
       # )
       # req = ApiAuth.sign!(rest_request, Mifiel.config.app_id, Mifiel.config.app_secret)
       # req.execute
-      params = { 'email' => 'test@mifiel.com', 'tax_id' => 'AAA000AAA0' }
-      x = Net::HTTP.post_form(URI.parse('https://app-stageex.mifiel.com/api/v1/documents/7e4f0ec4-9668-4cc2-a585-351cd0bf6313/signers'), params)
+      # x = Net::HTTP.post_form(URI.parse('https://app-stageex.mifiel.com/api/v1/documents/7e4f0ec4-9668-4cc2-a585-351cd0bf6313/signers'), params)
 
-      puts x.body
+      # puts x.body
+      Mifiel::Signer.makesigner("/documents/#{id}/signers", :post )
     end
     
-    
+    def self.makesigner(path, method, payload=nil)
+      puts 'estas en makesigner'
+      params = { email: email }
+      rest_request = RestClient::Request.new(
+        url: "#{Mifiel.config.base_url}/#{path}",
+        method: method,
+        ssl_version: 'SSLv23'
+      )
+      req = ApiAuth.sign!(rest_request, Mifiel.config.app_id, Mifiel.config.app_secret)
+      req.execute
+    end
   end
 end
