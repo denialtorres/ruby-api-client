@@ -6,7 +6,7 @@ module Mifiel
     get :find, '/documents/:id'
     put :save, '/documents/:id'
     delete :delete, '/documents/:id'
-
+    put :close, '/documents/:id/close'
     # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     def self.create(args)
       puts 'vas a crear un documento'
