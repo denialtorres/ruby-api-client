@@ -37,7 +37,7 @@ module Mifiel
     end
 
     def save_file(path)
-      response = Mifiel::Document.process_request("/documents/#{id}/file", :get)
+      response =  
       File.open(path, 'wb') { |file| file.write(response) }
     end
 
