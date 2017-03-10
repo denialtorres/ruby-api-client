@@ -6,6 +6,7 @@ module Mifiel
   put :save, "/signers/:id"
   post :create, "/documents/:id/signers"
 
-  puts "id es #{id}"
+  def self.add_signers(args)
+    puts 'estas en la nueva funcion'
   end
 end
